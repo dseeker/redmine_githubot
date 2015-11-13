@@ -5,6 +5,8 @@ Finds redmine ticket numbers in github pull requests and brings state informatio
 ### Configuration
 Replace
 
+\*\*token** - create a new github token to use with this script
+
 \*\*username** - github's repository owner username
 
 \*\*repository** - repository name
