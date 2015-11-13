@@ -1,5 +1,5 @@
 var app={};
-app.token='4b8acad04cc79e85d74ac37bf36532d4e190434a';
+app.token='**token**';
 app.apiDomain = 'https://api.github.com';
 app.username="**username**";
 app.userinfo="/users/" + app.username;
