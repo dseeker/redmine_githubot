@@ -8,9 +8,9 @@ app.pulls=app.repos+"pulls";
 app.branch=app.repos+"branches/";
 app.color={'open':'#B52E2E', 'closed':'#366B02'};
 app.single={};
-app.single.page='**active_url**';
+app.single.page='**active_url_single**';
 app.multi={};
-app.multi.page='**active_url**';
+app.multi.page='**active_url_multi**';
 app.popup="<div class='github_popup' style='position:absolute; left:35%; top:15%; background-color:rgba(0,0,0,.7); color:#fff; padding:30px; font-size:20px;'>Loading Github Pull Requests</div>"
 
 $('body').append(app.popup);
