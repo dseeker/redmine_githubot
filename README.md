@@ -1,6 +1,20 @@
 # Redmine Githubot
 Finds redmine ticket numbers in github pull requests and brings state information into redmine
 
+
+### Configuration
+Replace
+
+\*\*username** - github's repository owner username
+
+\*\*repository** - repository name
+
+\*\*active_url_single** - which page url to activate the single ticket mode (ex: ".com/issues/")
+
+\*\*active_url_multi** - which page url to activate the single ticket mode (ex: ".com/projects/")
+
+
+### Usage
 This is a simple javascript code that can be run on developer console. When executed it will search, in the specified repository, all ticket numbers in a pull request's branch. Once it finds it, it beings pull request state information (open/closed) into redmine.
 
 Alternatively, a browser extension can be used to inject the script into every page within a specified domain.
