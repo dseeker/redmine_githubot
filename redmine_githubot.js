@@ -34,7 +34,7 @@ function getUrl(giturl){
 
 
 function single(e){
-	// console.log ("-> Single",e);
+	console.log ("-> Single",e);
 	// var found=false;
 	app.single.title = $('#content h2').first().text().toLowerCase().split(' ');
 	app.single.ticket=app.single.title[2].split('#')[1];
@@ -44,8 +44,8 @@ function single(e){
 			console.log('-> pull request #'+pull.number+' state:'+pull.state+' title:'+pull.title)
 			var user=pull.user.html_url.split('/').pop();
 			var assignee=(pull.assignee)?pull.assignee.html_url.split('/').pop():"no one";
-			$('.subject h3').html("<span style='color:"+app.color[pull.state]+"'>"+$('.subject h3').text()+"</span>")
-			$('#content .issue .author').first().css('padding-bottom',10).after('<p class="author"><a href='+pull.html_url+'>#'+pull.number+' ['+pull.state+'] - '+pull.title+'</a> by <a href='+pull.user.html_url+'>'+user+'</a> assigned to '+(pull.assignee?'<a href='+pull.assignee.html_url+'>':'')+assignee+'</a></p>');
+			if ($('.subject h3').css('color').indexOf('85,')>-1) $('.subject h3').html("<span style='color:"+app.color[pull.state]+"'>"+$('.subject h3').text()+"</span>")
+			$('#content .issue .author').first().css('padding-bottom',10).after('<p class="author gitpull"><a href='+pull.html_url+'>#'+pull.number+' ['+pull.state+'] - '+pull.title+'</a> by <a href='+pull.user.html_url+'>'+user+'</a> assigned to '+(pull.assignee?'<a href='+pull.assignee.html_url+'>':'')+assignee+'</a></p>');
 			// found=true;
 		}
 	})
@@ -63,7 +63,9 @@ function multi(e){
 			// console.log(pull)
 			if (pull.head.label.indexOf($(v).text())>-1){
 				console.log('-> pull request #'+pull.number+' state:'+pull.state+' title:'+pull.title);
-				$(v).find('a').css({'color':app.color[pull.state], 'font-weight':'bold'});
+				var user=pull.user.html_url.split('/').pop();
+				var assignee=(pull.assignee)?pull.assignee.html_url.split('/').pop():"no one";
+				$(v).find('a').css({'color':app.color[pull.state], 'font-weight':'bold'}).attr('title','#'+pull.number+' ['+pull.state+'] - '+pull.title+' by '+user+' assigned to '+assignee);
 			}
 		})
 	})
