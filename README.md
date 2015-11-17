@@ -23,3 +23,7 @@ Alternatively, a browser extension can be used to inject the script into every p
 For chrome you can use [Custom JavaScript for websites](https://chrome.google.com/webstore/detail/custom-javascript-for-web/poakhlngfciodnhlhhgnaaelnpjljija) .
 
 Just paste the script for a redmine domain and it will execute on every page load
+
+
+####todo
+- use gray instead of red to indicate closed request that have not been merged
