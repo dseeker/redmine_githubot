@@ -27,3 +27,4 @@ Just paste the script for a redmine domain and it will execute on every page loa
 
 ####todo
 - use gray instead of red to indicate closed request that have not been merged
+- automatically generate changelog by looking at pull requests merged on tickets with "ready to deploy"
